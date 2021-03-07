@@ -4,7 +4,7 @@
     - name: Launch a new container
       docker_container:
         name: my-container
-        image: greatbsky/sshcentos7
+        image: cankush625/centos-ssh:v2
         state: started
         detach: yes
         interactive: yes
@@ -33,9 +33,7 @@
         state: present
 
     - name: Start httpd
-      service:
-        name: httpd
-        state: enabled
+      command: /usr/sbin/httpd
 
     - name: Copy webpage
       copy:
